@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id "io.spring.dependency-management" version "1.1.0"
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '3.4.2'
+    id 'jacoco'
+}
+
+group = 'com.rapicredit'
+version = '0.1.0-SNAPSHOT'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    flatDir {
+        dirs "libs"
+    }
+}
+
+ext {
+    serenityVersion = '2.4.34'
+}
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-single-page-report:2.4.34'
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+
+    // Cucumber (solo para tests) - alineado a Cucumber 6 para serenity-cucumber6
+    implementation 'io.cucumber:cucumber-junit:6.10.4'
+    testImplementation 'io.cucumber:cucumber-java:6.10.4'
+    // Asegurar que Cucumber+Serenity esté en el classpath para el runner
+    implementation "net.serenity-bdd:serenity-cucumber6:${serenityVersion}"
+
+    // Selenium + WebDriverManager (versión compatible con Serenity 2.x / Selenium 3)
+    implementation 'io.github.bonigarcia:webdrivermanager:3.8.1'
+
+    // Assertions
+    implementation 'org.assertj:assertj-core:3.24.2'
+
+    // JUnit 4 (para useJUnit())
+    testImplementation 'junit:junit:4.13.2'
+}
+serenity {
+    testRoot = 'runners.rapiCreditRunner'
+    requirementsBaseDir = 'src/test/resources/features'
+    reports = ['single-page-html']
+}
+
+// Si la tarea de agregación de Serenity existe (aquí es 'aggregate'), que se ejecute después de 'test' (no forzar dependencia directa)
+tasks.matching { it.name == 'aggregate' }.configureEach {
+    mustRunAfter tasks.named('test')
+}
+
+test {
+    finalizedBy 'aggregate'
+    useJUnit()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showStandardStreams true
+    }
+}

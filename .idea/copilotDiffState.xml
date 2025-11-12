@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/test/java/com/rapicredit/stepdefinitions/PayCreditStep.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/test/java/com/rapicredit/stepdefinitions/PayCreditStep.java" />
+              <option name="originalContent" value="package com.rapicredit.stepdefinitions;&#10;&#10;import io.cucumber.java.Before;&#10;import net.serenitybdd.screenplay.actors.OnStage;&#10;import net.serenitybdd.screenplay.actors.OnlineCast;&#10;&#10;public class PayCreditStep {&#10;&#10;    @Before&#10;    public void setStage() {&#10;        if (OnStage.theActorCalled(&quot;User&quot;) == null) {&#10;            OnStage.setTheStage(new OnlineCast());&#10;            OnStage.theActorCalled(&quot;User&quot;);&#10;        } else {&#10;            OnStage.setTheStage(new OnlineCast());&#10;            OnStage.theActorCalled(&quot;User&quot;);&#10;        }&#10;    }&#10;&#10;}&#10;" />
+              <option name="updatedContent" value="package com.rapicredit.stepdefinitions;&#10;&#10;import io.cucumber.java.Before;&#10;import net.serenitybdd.screenplay.actors.OnStage;&#10;import net.serenitybdd.screenplay.actors.OnlineCast;&#10;&#10;public class PayCreditStep {&#10;&#10;    @Before&#10;    public void setStage() {&#10;        if (OnStage.theActorCalled(&quot;User&quot;) == null) {&#10;            OnStage.setTheStage(new OnlineCast());&#10;            OnStage.theActorCalled(&quot;User&quot;);&#10;        } else {&#10;            OnStage.setTheStage(new OnlineCast());&#10;            OnStage.theActorCalled(&quot;User&quot;);&#10;        }&#10;    }&#10;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/resources/features/contact.feature">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/test/resources/features/contact.feature" />
+              <option name="updatedContent" value="Feature: Contactar al servicio&#10;  Como usuario quiero enviar un mensaje de contacto para recibir soporte&#10;&#10;  Scenario: Enviar formulario de contacto con datos válidos&#10;    Given the user is on the Rapicredit home page&#10;    When the user submits the contact form with the following data&#10;      | Nombre=tu-nombre | Nombre=tu-email       | name=cédula | Nombre=celular | Nombre = su mensaje       |&#10;      | Evelyn Rua       | everua77@gmail.com    | 1001138771  | 3150506577     | Prueba Automatizada      |&#10;    Then the contact message should be sent successfully&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

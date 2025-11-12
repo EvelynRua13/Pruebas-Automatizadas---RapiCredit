@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"RapiCredit - Main use cases","Usuario inicia sesión desde la página principal","SUCCESS","2025-11-12T03:15:51.7491812-05:00[America/Bogota]","0.0","36.38"
+"RapiCredit - Main use cases","Usuario intenta iniciar sesión con contraseña incorrecta y acepta el banner de fallo","SUCCESS","2025-11-12T03:16:28.1580035-05:00[America/Bogota]","0.0","26.79"
+"RapiCredit - Main use cases","Registrar usuario completo","SUCCESS","2025-11-12T03:16:54.9921598-05:00[America/Bogota]","0.0","30.98"
+"RapiCredit - Main use cases","Enviar formulario de contacto con datos válidos","SUCCESS","2025-11-12T03:17:25.9993281-05:00[America/Bogota]","0.0","24.77"
+"RapiCredit - Main use cases","Buscar en preguntas frecuentes por palabra clave","SUCCESS","2025-11-12T03:17:50.785657-05:00[America/Bogota]","0.0","43.43"
+"RapiCredit - Main use cases","Pagar un crédito pendiente","SUCCESS","2025-11-12T03:18:34.2466517-05:00[America/Bogota]","0.0","27.53"
