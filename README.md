@@ -14,9 +14,7 @@ Contenido de este README
 - Requisitos previos
 - Cómo ejecutar las pruebas (Windows, cmd.exe)
 - Cómo regenerar y ver el reporte de Serenity correctamente
-- Diagnóstico y solución a problemas frecuentes (404/MIME, faltan recursos, rutas con espacios)
 - Ejecutar pruebas específicas (feature, tag, runner)
-- Añadir SLF4J / logging
 
 
 1) Estructura importante del proyecto
